@@ -1,0 +1,12 @@
+{
+  "name": "SuluAI",
+  "description": "Photorealistic Virtual Try-On assistant for the Kazakhstan market, providing culturally relevant fashion advice and high-resolution outfit visualizations.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "Image Analysis",
+    "Creative Image Generation",
+    "Multilingual Support (Kazakh)"
+  ]
+}

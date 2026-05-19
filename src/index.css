@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#F2F2F2] text-[#1A1A1A] selection:bg-black selection:text-white font-sans;
+  }
+}
+
+.card-minimal {
+  @apply bg-white rounded-xl border border-[#E5E5E5] shadow-sm;
+}
+
+.btn-primary-minimal {
+  @apply bg-black text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-widest hover:opacity-90 transition-all;
+}
+
+.wardrobe-item-minimal {
+  @apply h-16 w-full border border-[#F0F0F0] bg-[#FAFAFA] rounded-lg flex items-center p-3 gap-3 hover:border-[#1A1A1A] transition-colors cursor-pointer;
+}
+
+.studio-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
