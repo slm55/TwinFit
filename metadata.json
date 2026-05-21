@@ -1,5 +1,5 @@
 {
-  "name": "SuluAI",
+  "name": "TwinFit",
   "description": "Photorealistic Virtual Try-On assistant for the Kazakhstan market, providing culturally relevant fashion advice and high-resolution outfit visualizations.",
   "requestFramePermissions": [
     "camera"

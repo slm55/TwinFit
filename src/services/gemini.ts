@@ -23,7 +23,7 @@ export async function getOutfitSelection(
   const model = "gemini-3-flash-preview";
   
   const contents = [
-    { text: `Сен - SuluAI атты қазақстандық виртуалды стиль кеңесшісісің. 
+    { text: `Сен - TwinFit атты қазақстандық виртуалды стиль кеңесшісісің. 
 Міндетің: берілген киімдердің (Wardrobe Photos) арасынан фотодағы адамға (Base Photo) және берілген оқиғаға (Event Context) ең қолайлысын таңдап беру.
 
 Оқиға мән-мәтіні: ${eventContext}

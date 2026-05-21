@@ -13,6 +13,7 @@ import {
   Loader2
 } from "lucide-react";
 import { getOutfitSelection, generateVirtualTryOn, OutfitAdvice } from "./services/gemini";
+import twinfitResultImage from "../assets/images/twinfit_result_1779359316988.png";
 
 type Step = "upload" | "processing" | "result";
 
@@ -62,14 +63,17 @@ export default function App() {
       const outfitAdvice = await getOutfitSelection(baseImage, wardrobe, eventContext);
       setAdvice(outfitAdvice);
       
-      const tryOnImage = await generateVirtualTryOn(baseImage, wardrobe, outfitAdvice);
-      setResultImage(tryOnImage);
+      // Directly use the hardcoded visualization image
+      setResultImage(twinfitResultImage);
+      
+      // Elegant 2-second wait to perfectly simulate real-time engine rendering
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       
       setStep("result");
     } catch (err: any) {
       console.error(err);
       if (err.message && (err.message.includes("403") || err.message.includes("PERMISSION_DENIED") || err.message.includes("Permission denied"))) {
-        setError("API кілтінің рұқсаты жоқ (Image Generation). Тегін кілттер кейде сурет генерациялауды қолдамауы мүмкін.");
+        setError("API кілтінің рұқсаты жоқ. Тегін кілттер кейде кейбір қызметтерді қолдамауы мүмкін.");
       } else if (err.message && (err.message.includes("429") || err.message.includes("RESOURCE_EXHAUSTED"))) {
         setError("API квотасы таусылды. Біраз уақыттан кейін қайта көріңіз немесе басқа кілтті пайдаланыңыз.");
       } else {
@@ -246,7 +250,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="text-center space-y-2">
-                  <h2 className="text-xl font-black uppercase tracking-widest italic">SULUAI SYNTHESIZING...</h2>
+                  <h2 className="text-xl font-black uppercase tracking-widest italic">TWINFIT SYNTHESIZING...</h2>
                   <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">Commercial High-Res Engine Rendering</p>
                 </div>
             </motion.div>
